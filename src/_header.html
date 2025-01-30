@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcel template</title>
+  <link rel="stylesheet" href="scss/index.scss" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a class="header__logo" href="/">
+        <img  width="188" height="38" src="images/header/logo.svg" alt="Логотип">
+      </a>
+      <nav class="main-menu">
+        <ul class="main-menu__list">
+          <li class="main-menu__list-item dropdown-menu">
+            <a href="#" class="main-menu__link svg-replace">
+              <img class="svg-replace__icon svg-replace__icon--fill" width="24" height="24" src="images/header/course.svg" alt="Меню иконка">
+              Курсы
+              <img class="svg-replace__icon" width="16" height="16" src="images/header/arrow.svg" alt="Стрелка">
+            </a>
+            <ul class="dropdown-menu__block dropdown-menu__block--courses">
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon svg-replace__icon--fill" width="24" height="24" src="images/header/course.svg" alt="Меню иконка">
+                  Каталог курсов
+                </a>
+              </li>
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon" width="24" height="24" src="images/header/vocational-training.svg" alt="Меню иконка">
+                  Профессиональная подготовка
+                </a>
+              </li>
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon" width="24" height="24" src="images/header/advanced-training.svg" alt="Меню иконка">
+                  Повышение квалификации
+                </a>
+              </li>
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon" width="24" height="24" src="images/header/audio-courses.svg" alt="Меню иконка">
+                  Аудиокурсы
+                </a>
+              </li>
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon" width="24" height="24" src="images/header/miini-courses.svg" alt="Меню иконка">
+                  Мини-курсы
+                </a>
+              </li>
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon" width="24" height="24" src="images/header/about-courses.svg" alt="Меню иконка">
+                  О курсах
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="main-menu__list-item">
+            <a href="#" class="main-menu__link svg-replace active">
+              <img class="svg-replace__icon svg-replace__icon--fill" width="24" height="24" src="images/header/events.svg" alt="Меню иконка">
+              Мероприятия
+            </a>
+          </li>
+          <li class="main-menu__list-item">
+            <a href="#" class="main-menu__link svg-replace">
+              <img class="svg-replace__icon" width="24" height="24" src="images/header/document.svg" alt="Меню иконка">
+              Материалы
+            </a>
+          </li>
+          <li class="main-menu__list-item dropdown-menu">
+            <a href="#" class="main-menu__link svg-replace">
+              <img class="svg-replace__icon" width="24" height="24" src="images/header/teacher.svg" alt="Меню иконка">
+              Учителю
+              <img class="svg-replace__icon" width="16" height="16" src="images/header/arrow.svg" alt="Стрелка">
+            </a>
+            <ul class="main-menu__submenu dropdown-menu__block dropdown-menu__block--teacher ">
+              <li class="main-menu__item main-menu__item--border-right">
+                <ul class="main-menu__elements">
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/library.svg" alt="Меню иконка">
+                      Библиотека
+                    </a>
+                  </li>
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/question.svg" alt="Меню иконка">
+                      Ассистент-методист
+                    </a>
+                  </li>
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/medal.svg" alt="Меню иконка">
+                      Международная олимпиада
+                    </a>
+                  </li>
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/speaker.svg" alt="Меню иконка">
+                      Школьные инфоконкурсы
+                    </a>
+                  </li>
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/papers.svg" alt="Меню иконка">
+                      Профтестирование
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-menu__item">
+                <ul class="main-menu__elements">
+
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/horiz_card.svg" alt="Меню иконка">
+                      Каталог тестов
+                    </a>
+                  </li>
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/programs.svg" alt="Меню иконка">
+                      Каталог рабочих программ
+                    </a>
+                  </li>
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/board.svg" alt="Меню иконка">
+                      Виртуальный класс
+                    </a>
+                  </li>
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/play.svg" alt="Меню иконка">
+                      Видеоуроки
+                    </a>
+                  </li>
+                  <li class="main-menu__subitem">
+                    <a class="main-menu__sublink svg-replace" href="#">
+                      <img class="svg-replace__icon" width="24" height="24" src="images/header/edit.svg" alt="Меню иконка">
+                      Стать репетитором
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="main-menu__list-item dropdown-menu">
+            <a href="#" class="main-menu__link svg-replace">
+              <img class="svg-replace__icon" width="24" height="24" src="images/header/student.svg" alt="Меню иконка">
+              Ученику
+              <img class="svg-replace__icon" width="16" height="16" src="images/header/arrow.svg" alt="Стрелка">
+            </a>
+            <ul class="main-menu__submenu dropdown-menu__block dropdown-menu__block--student">
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon" width="24" height="24" src="images/header/medal.svg" alt="Меню иконка">
+                  Международная олимпиада
+                </a>
+              </li>
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon" width="24" height="24" src="images/header/speaker.svg" alt="Меню иконка">
+                  Школьные инфоконкурсы
+                </a>
+              </li>
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon" width="24" height="24" src="images/header/play.svg" alt="Меню иконка">
+                  Видеоуроки
+                </a>
+              </li>
+              <li class="main-menu__subitem">
+                <a class="main-menu__sublink svg-replace" href="#">
+                  <img class="svg-replace__icon" width="24" height="24" src="images/header/board.svg" alt="Меню иконка">
+                  Виртуальный класс
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__block">
+        <button class="search-button svg-replace">
+          <img class="header__search svg-replace__icon" width="24" height="24" src="images/header/search.svg" alt="Создать">
+        </button>
+        <div class="language-tabs">
+          <button class="language-tabs__toggle">
+            RU
+          </button>
+          <ul class="language-tabs__items">
+            <li class="language-tabs__item">
+              <label class="language-tag">
+                <input class="language-tag__input" checked="" type="radio" name="language" value="ru">
+                <span class="language-tag__text">
+                RU
+              </span>
+              </label>
+              <label class="language-tag">
+                <input class="language-tag__input" type="radio" name="language" value="kk">
+                <span class="language-tag__text">
+                KZ
+              </span>
+              </label>
+              <label class="language-tag">
+                <input class="language-tag__input" type="radio" name="language" value="us">
+                <span class="language-tag__text">
+                UZ
+              </span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <a href="/site/upload" class="btn btn-create" target="_blank">
+          <img width="24" height="24" src="images/header/plus.svg" alt="Плюс">
+          Создать
+        </a>
+        <div class="user-logged dropdown-menu dropdown-menu--profile">
+          <img class="user-logged__avatar" width="40" height="40" src="images/header/avatar.png" alt="Лого пользователя">
+
+          <div class="user-logged__inner dropdown-menu__block dropdown-menu__block--profile">
+            <div class="user-logged__header">
+              <img src="images/header/userpic.png" width="56" height="56"  alt="Лого пользователя" class="user-logged__logo">
+              <div class="user-logged__block">
+                <p class="user-logged__name">Д. Ю. Константинопольский</p>
+                <p class="user-logged__mail">konstantinov@yandex.ru</p>
+              </div>
+              <a href="/user/id" class="user-logged__change">
+                <img src="images/header/pencil-user.svg" width="40" height="40"  alt="Лого пользователя" class="user-logged__icon">
+              </a>
+            </div>
+
+            <ul class="user-logged__list">
+              <li class="user-logged__list-item">
+                <a href="#" class="user-logged__link">
+                  Мой профиль
+                </a>
+              </li>
+              <li class="user-logged__list-item">
+                <a href="#" class="user-logged__link">
+                  Баланс
+                </a>
+              </li>
+              <li class="user-logged__list-item">
+                <a href="#" class="user-logged__link">
+                  Настройки
+                </a>
+              </li>
+              <li class="user-logged__list-item">
+                <a href="#" class="user-logged__link">
+                  Достижения
+                </a>
+              </li>
+              <li class="user-logged__list-item">
+                <a href="#" class="user-logged__link">
+                  Инфоурок премиум
+                </a>
+              </li>
+              <li class="user-logged__list-item">
+                <a href="#" class="user-logged__link">
+                  Кабинет партнера
+                </a>
+              </li>
+            </ul>
+
+            <div class="user-logged__bottom">
+              <a href="#" class="user-logged__link">Выйти</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+<script src="js/index.ts" type="module"></script>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("img.svg-replace__icon");
+
+    if(images){
+      images.forEach((img) => {
+        const imgURL = img.getAttribute("src");
+
+        fetch(imgURL)
+          .then((response) => response.text())
+          .then((data) => {
+            const parser = new DOMParser();
+            const svg = parser.parseFromString(data, "image/svg+xml").querySelector("svg");
+
+            if (svg) {
+              svg.setAttribute("class", img.getAttribute("class") || "");
+              svg.removeAttribute("xmlns:a");
+              img.replaceWith(svg);
+            }
+          })
+          .catch((error) => console.error("Ошибка загрузки SVG:", error));
+      });
+    }
+
+    const languageTabsWrap = document.querySelector('.language-tabs');
+    const languageTabsDropdown = document.querySelector('.language-tabs__items');
+    const languageButtonToggleTabs = document.querySelector('.language-tabs__toggle');
+    const languageRadioButton = document.querySelectorAll('.language-tag__input');
+
+    function toggleVisibilityLanguageTabs() {
+      languageTabsWrap.classList.toggle('language-tabs--active');
+    }
+
+    languageButtonToggleTabs.addEventListener('click', function () {
+      toggleVisibilityLanguageTabs();
+    })
+
+    languageRadioButton.forEach(handlerPeriodsTabs);
+
+    function handlerPeriodsTabs(el) {
+      el.addEventListener("change", function (event) {
+        toggleVisibilityLanguageTabs();
+
+        iu.ajax(event, '/language/language/set', {
+          language: event.currentTarget.value,
+        })
+      })
+    }
+
+    document.addEventListener('click', function (e) {
+      if (!languageTabsWrap.contains(e.target) && !languageTabsDropdown.contains(e.target) && languageTabsWrap.classList.contains('language-tabs--active')) {
+        languageTabsWrap.classList.remove('language-tabs--active')
+      }
+    });
+  });
+</script>
+</html>

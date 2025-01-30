@@ -1,0 +1,45 @@
+:root {
+  --green-1000: #122600;
+  --green-900: #124700;
+  --green-800: #1b6100;
+  --green-700: #1c750b;
+  --white: #fbfcfa;
+  --primary-black: #1f1f1f;
+  --background: #f5f5f5;
+  --secondary-black: #aab0a7;
+  --green-1000: #112004;
+  --green-600: #388700;
+  --green-base: #24a600;
+  --green-400: #87d448;
+  --green-300: #ace57a;
+  --green-200: #c2f09e;
+  --green-100: #d8f2c2;
+  --green-50: #ecf9e2;
+  --white: #fbfcf9;
+  --black: #1f1f1f;
+  --white: #fbfcfa;
+  --secondary: #ebebeb;
+  --orange: #ffa71a;
+  --orange-light: #ffe3c2;
+  --red: #d92616;
+  --blue: #0c73f0;
+  --violet: #7e42f5;
+  --blue-light: #b8dbff;
+  --violet-light: #c5bfff;
+  --grey-dark: #8a8f88;
+  --violet-dark: #471f99;
+  --blue-dark: #093eb8;
+  --orange-dark: #fa7907;
+  --grey-light: #d6d6d6;
+  --orange-white: #fce7cc;
+  --red-light: #f4d1cc;
+}
+
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "core/reset";
+@import "global";
+@import "fonts";
+@import "header";
+@import "footer";
+@import "sidebar";

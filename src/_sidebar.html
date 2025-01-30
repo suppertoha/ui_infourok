@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcel template</title>
+  <link rel="stylesheet" href="scss/index.scss" />
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar__inner">
+    <ul class="sidebar__elements">
+      <li class="sidebar__element" data-dropdown-container>
+        <h2 class="sidebar__item-name" data-dropdown-toggle>КАБИНЕТ АВТОРА
+          <img width="16" height="16" loading="lazy" src="images/footer/arrow.svg" alt="arrow">
+        </h2>
+        <ul class="sidebar__list" data-dropdown-content>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link">
+              <img class="svg-replace__icon svg-replace__icon--fill" width="24" height="24" src="images/sidebar/course.svg" alt="Меню иконка">
+              Курсы
+            </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link active">
+              <img class="svg-replace__icon svg-replace__icon--fill" width="24" height="24" src="images/sidebar/events.svg" alt="Меню иконка">
+              Мероприятия
+            </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link">
+              <img class="svg-replace__icon" width="24" height="24" src="images/sidebar/document.svg" alt="Меню иконка">
+              Материалы
+            </a>
+          </li>
+
+          <li class="sidebar__list-item">
+
+          </li>
+
+        </ul>
+      </li>
+
+      <li class="sidebar__element" data-dropdown-container>
+        <h2 class="sidebar__item-name" data-dropdown-toggle>Покупки
+          <img width="16" height="16" loading="lazy" src="images/footer/arrow.svg" alt="arrow">
+        </h2>
+        <ul class="sidebar__list" data-dropdown-content>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link">
+              <img class="svg-replace__icon svg-replace__icon--fill" width="24" height="24" src="images/sidebar/course.svg" alt="Меню иконка">
+              Курсы
+            </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link active">
+              <img class="svg-replace__icon svg-replace__icon--fill" width="24" height="24" src="images/sidebar/events.svg" alt="Меню иконка">
+              Мероприятия
+            </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link">
+              <img class="svg-replace__icon" width="24" height="24" src="images/sidebar/document.svg" alt="Меню иконка">
+              Материалы
+            </a>
+          </li>
+
+          <li class="sidebar__list-item">
+
+          </li>
+
+        </ul>
+      </li>
+
+      <li class="sidebar__element" data-dropdown-container>
+        <h2 class="sidebar__item-name" data-dropdown-toggle>Курсы
+          <img width="16" height="16" loading="lazy" src="images/footer/arrow.svg" alt="arrow">
+        </h2>
+        <ul class="sidebar__list" data-dropdown-content>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link">
+              <img class="svg-replace__icon svg-replace__icon--fill" width="24" height="24" src="images/sidebar/course.svg" alt="Меню иконка">
+              Каталог курсов
+            </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link active">
+              <img class="svg-replace__icon svg-replace__icon--fill" width="24" height="24" src="images/sidebar/about-courses.svg" alt="Меню иконка">
+              Профессиональная подготовка
+            </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link">
+              <img class="svg-replace__icon" width="24" height="24" src="images/sidebar/document.svg" alt="Меню иконка">
+              Повышение квалификации
+            </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link">
+              <img class="svg-replace__icon" width="24" height="24" src="images/sidebar/document.svg" alt="Меню иконка">
+              Аудиокурсы
+            </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link">
+              <img class="svg-replace__icon" width="24" height="24" src="images/sidebar/document.svg" alt="Меню иконка">
+              Мини-курсы
+            </a>
+          </li>
+          <li class="sidebar__list-item">
+            <a href="#" class="sidebar__list__link">
+              <img class="svg-replace__icon" width="24" height="24" src="images/sidebar/document.svg" alt="Меню иконка">
+              О курсах
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script src="js/index.ts" type="module"></script>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("img.svg-replace__icon");
+
+    if(images){
+      images.forEach((img) => {
+        const imgURL = img.getAttribute("src");
+
+        fetch(imgURL)
+          .then((response) => response.text())
+          .then((data) => {
+            const parser = new DOMParser();
+            const svg = parser.parseFromString(data, "image/svg+xml").querySelector("svg");
+
+            if (svg) {
+              svg.setAttribute("class", img.getAttribute("class") || "");
+              svg.removeAttribute("xmlns:a");
+              img.replaceWith(svg);
+            }
+          })
+          .catch((error) => console.error("Ошибка загрузки SVG:", error));
+      });
+    }
+  });
+</script>
+</html>
