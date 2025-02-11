@@ -19,6 +19,10 @@
     @include media($xl) {
       padding: 10px 76px 10px 24px;
     }
+    
+    @include media($sm) {
+      padding: 10px 60px 10px 8px;
+    }
   }
 
   &__inner {
@@ -37,6 +41,10 @@
       width: 168px;
     }
 
+    @include media($lg) {
+      margin-right: 10px;
+    }
+
     img {
       height: auto;
     }
@@ -47,6 +55,10 @@
     align-items: center;
     margin-left: auto;
     gap: 12px;
+    
+    @include media($sm) {
+      display: none;
+    }
 
     &.disabled {
       @include media($xl) {
