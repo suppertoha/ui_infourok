@@ -1,0 +1,61 @@
+.header {
+  background-color: var(--white);
+
+  .container{
+    @include media($xl) {
+      padding: 0;
+    }
+  }
+
+  &__body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    background-color: var(--white);
+
+    @include media($xl) {
+      padding: 14px 50px 14px 10px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+  }
+
+  &__logo {
+    margin-right: 108px;
+
+    @include media($xxl) {
+      margin-right: 39px;
+      width: 168px;
+    }
+
+    img {
+      height: auto;
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 12px;
+
+    &.disabled {
+      @include media($xl) {
+        //display: none;
+      }
+    }
+  }
+
+  &__burger{
+
+  }
+}
