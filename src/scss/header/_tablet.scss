@@ -7,14 +7,15 @@
   &__burger{
     position: absolute;
     z-index: 100;
-    top: 17px;
-    right: 6px;
+    top: 12px;
+    right: 24px;
   }
 
   &__block{
     position: fixed;
     z-index: 99;
     top: -100%;
+    background-color: #fbfcfa;
     left: 0;
     right: 0;
     transition: 0.3s;
@@ -22,9 +23,9 @@
     opacity: 0;
     visibility: hidden;
 
-    //top: 0;
-    //opacity: 1;
-    //visibility: visible;
+    top: 0;
+    opacity: 1;
+    visibility: visible;
 
     &.menu--active{
       top:0;
@@ -45,7 +46,7 @@
     gap: 20px;
     border: 1px solid #d6d6d6;
     border-radius: 24px;
-    padding: 24px 16px;
+    padding: 16px 23px 16px;
 
     &--mobile{
       @include min-media($md) {
@@ -64,7 +65,7 @@
     }
 
     &:not(:last-child) {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
   }
   
@@ -120,7 +121,7 @@
     }
     &--grid{
       display: grid;
-      grid-gap: 12px;
+      grid-gap: 8px;
       grid-template-columns: repeat(3, 1fr);
       
       @include media($lg) {
