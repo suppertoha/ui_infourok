@@ -186,7 +186,9 @@
   &__item{
     .tablet__items--grid &{
       &:nth-child(n + 5) {
-        display: none;
+        @include media($sm) {
+          display: none;
+        }
       }
     }
   }
