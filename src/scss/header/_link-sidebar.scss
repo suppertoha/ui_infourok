@@ -1,0 +1,38 @@
+.link-sidebar {
+  padding-top: 17px;
+  border-top: 1px solid #d6d6d6;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &--row {
+      flex-direction: row;
+      gap: 12px;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: #8a8f88;
+
+    &--flex {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &--border {
+      border-bottom: 1px solid #d6d6d6;
+      transition: 0.3s;
+
+      &:hover {
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+}

@@ -1,25 +1,25 @@
 .header {
   background-color: var(--white);
 
-  .container{
+  .container {
     @include media($xl) {
       padding: 0;
     }
   }
 
-  &__body{
+  &__body {
+    position: relative;
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    z-index: 100;
     width: 100%;
     background-color: var(--white);
 
     @include media($xl) {
       padding: 10px 76px 10px 24px;
     }
-    
+
     @include media($sm) {
       padding: 10px 60px 10px 8px;
     }
@@ -29,8 +29,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-
   }
 
   &__logo {
@@ -55,19 +53,9 @@
     align-items: center;
     margin-left: auto;
     gap: 12px;
-    
+
     @include media($sm) {
       display: none;
     }
-
-    &.disabled {
-      @include media($xl) {
-        //display: none;
-      }
-    }
-  }
-
-  &__burger{
-
   }
 }

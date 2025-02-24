@@ -1,8 +1,8 @@
 .main-menu {
-
   @include media($xl) {
     display: none;
   }
+
   &__list {
     display: flex;
     align-items: center;
