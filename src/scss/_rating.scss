@@ -1,0 +1,61 @@
+.rating {
+  display: flex;
+  align-items: center;
+
+  &__count {
+    margin-right: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #1f1f1f;
+
+    @include media($sm) {
+      font-size: 12px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+
+    @include media($sm) {
+      margin-right: 8px;
+    }
+  }
+
+  &__item {
+    width: 16px;
+    height: 16px;
+
+    &--positive {
+      background-image: url(../images/course/star-positive.svg);
+    }
+
+    &--negative {
+      background-image: url(../images/course/star-negative.svg);
+    }
+  }
+
+  &__all {
+    padding: 0;
+    border: none;
+    border-bottom: 2px solid #8a8f88;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #8a8f88;
+    background-color: transparent;
+    transition: 0.3s;
+
+    @include media($sm) {
+      font-size: 12px;
+    }
+
+    &:hover {
+      border-bottom: 2px solid transparent;
+    }
+  }
+}

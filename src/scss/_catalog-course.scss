@@ -1,0 +1,32 @@
+.catalog-course {
+  &__inner {
+    display: flex;
+    gap: 12px;
+
+    @include media($lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__container {
+    padding: 0 28px;
+    max-width: 1400px;
+
+    @include media($lg) {
+      padding: 0 16px;
+    }
+  }
+
+  &__filter {
+    flex-shrink: 0;
+    width: 300px;
+
+    @include media($xl) {
+      width: 270px;
+    }
+  }
+
+  &__cards {
+    width: 100%;
+  }
+}
