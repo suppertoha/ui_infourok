@@ -8,213 +8,384 @@
 </head>
 <body>
 
-    <div class="catalog-course">
-        <div class="container catalog-course__container">
-            <div class="catalog-course__inner">
-                <div class="catalog-course__filter">
-                    dfgdgdfg
-                </div>
-                <div class="catalog-course__cards">
-                    <div class="course">
-                        <ul class="course__items">
-                            <li class="course__item">
-                                <div class="course__left">
-                                    <div class="course__gallery gallery-course">
-                                        <a href="#" target="_blank" class="gallery-course__block">
-                                            <div class="gallery-course__item">
-                                                <img src="images/course/image2.png" class="gallery-course__img" width="205" height="205" loading="lazy" alt="Изображение 2">
-                                            </div>
-                                        </a>
-                                        <span class="gallery-course__status">
+<div class="catalog-course">
+    <div class="container catalog-course__container">
+        <div class="catalog-course__inner">
+            <div class="catalog-course__filter filter-list">
+                <form action="/kursy/search" class="filter-list__form">
+                    <h2 class="filter-list__title">Фильтры</h2>
+                    <ul class="catalog-course__elements">
+                        <li class="filter-list__element" data-controller="toggle-accordion" data-toggle-accordion-initially-hidden-value="false">
+
+                            <h3 class="filter-list__name">
+                                НАПРАВЛЕНИЕ
+                                <button type="button" class="filter-list__toggle" data-toggle-accordion-target="toggleButton">
+                                    <svg width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m17 21.586 7.293-7.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-8-8a1 1 0 1 1 1.414-1.414L17 21.586z" fill="#1F1F1F"></path>
+                                    </svg>
+                                </button>
+                            </h3>
+                            <div class="filter-list__content" data-toggle-accordion-target="content">
+                                <br>
+                                <ul class="filter-list__items">
+                                    <li class="filter-list__item">
+                                        <label class="checkbox">
+                                            <input class="checkbox__input" name="CourseSearchForm[isMini]" id="allDirections" value="0" type="checkbox">
+                                            <span class="checkbox__mark"></span>
+                                            <span class="checkbox__text">
+                                                    <label for="allDirections">Все направления</label>
+                                                </span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-list__item">
+                                        <label class="checkbox">
+                                            <input class="checkbox__input" name="CourseSearchForm[isMini]" id="softSkills" value="0" type="checkbox">
+                                            <span class="checkbox__mark"></span>
+                                            <span class="checkbox__text">
+                                                    <label for="softSkills">Гибкие навыки</label>
+                                                </span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-list__item">
+                                        <label class="checkbox">
+                                            <input class="checkbox__input" name="CourseSearchForm[isMini]" id="nonPedagogical" value="0" type="checkbox">
+                                            <span class="checkbox__mark"></span>
+                                            <span class="checkbox__text">
+                                                    <label for="nonPedagogical">Непедагогические</label>
+                                                </span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <br>
+                            </div>
+                        </li>
+                        <li class="filter-list__element" data-controller="toggle-accordion" data-toggle-accordion-initially-hidden-value="false">
+                            <h3 class="filter-list__name">
+                                ОБЛАСТЬ
+                                <button type="button" class="filter-list__toggle" data-toggle-accordion-target="toggleButton">
+                                    <svg width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m17 21.586 7.293-7.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-8-8a1 1 0 1 1 1.414-1.414L17 21.586z" fill="#1F1F1F"></path>
+                                    </svg>
+                                </button>
+                            </h3>
+                            <div class="filter-list__content" data-toggle-accordion-target="content">
+                                <br>
+                                <ul class="filter-list__items">
+                                    <li class="filter-list__item">
+                                        <div class="filter-list__search">
+                                            <input type="text" class="filter-list__search-input" placeholder="Введите свой запрос">
+                                        </div>
+                                    </li>
+                                    <li class="filter-list__item">
+                                        <label class="checkbox">
+                                            <input class="checkbox__input" name="CourseSearchForm[isMini]" id="allDirections2" value="0" type="checkbox">
+                                            <span class="checkbox__mark"></span>
+                                            <span class="checkbox__text">
+                                                    <label for="allDirections2">Все направления</label>
+                                                </span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-list__item">
+                                        <label class="checkbox">
+                                            <input class="checkbox__input" name="CourseSearchForm[isMini]" id="softSkills2" value="0" type="checkbox">
+                                            <span class="checkbox__mark"></span>
+                                            <span class="checkbox__text">
+                                                    <label for="softSkills2">Гибкие навыки</label>
+                                                </span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-list__item">
+                                        <label class="checkbox">
+                                            <input class="checkbox__input" name="CourseSearchForm[isMini]" id="nonPedagogical2" value="0" type="checkbox">
+                                            <span class="checkbox__mark"></span>
+                                            <span class="checkbox__text">
+                                                    <label for="nonPedagogical2">Непедагогические</label>
+                                                </span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-list__element filter-list__element--inside" data-controller="toggle-accordion" data-toggle-accordion-initially-hidden-value="true">
+                                        <h3 class="filter-list__name filter-list__name--inside js-filter-name" data-text="Скрыть">
+                                            <span>Еще <span class="js-filter-count">5</span> области</span>
+                                            <button type="button" class="filter-list__toggle" data-toggle-accordion-target="toggleButton">
+                                                <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.772 5.816c1.143 1.143 5.28 5.033 5.28 5.033s4.086-3.838 5.28-5.033" stroke="#1B6100" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            </button>
+                                        </h3>
+                                        <div class="filter-list__content" data-toggle-accordion-target="content">
+                                            <br>
+                                            <ul class="filter-list__items js-filter-block">
+                                                <li class="filter-list__item">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" name="CourseSearchForm[isMini]" id="1111" value="0" type="checkbox">
+                                                        <span class="checkbox__mark"></span>
+                                                        <span class="checkbox__text">
+                                                    <label for="1111">Все направления</label>
+                                                </span>
+                                                    </label>
+                                                </li>
+                                                <li class="filter-list__item">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" name="CourseSearchForm[isMini]" id="2222" value="0" type="checkbox">
+                                                        <span class="checkbox__mark"></span>
+                                                        <span class="checkbox__text">
+                                                    <label for="2222">Гибкие навыки</label>
+                                                </span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <br>
+                            </div>
+                        </li>
+                        <li class="filter-list__element" data-controller="toggle-accordion" data-toggle-accordion-initially-hidden-value="true">
+                            <h3 class="filter-list__name">
+                                Формат
+                                <button type="button" class="filter-list__toggle" data-toggle-accordion-target="toggleButton">
+                                    <svg width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m17 21.586 7.293-7.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-8-8a1 1 0 1 1 1.414-1.414L17 21.586z" fill="#1F1F1F"></path>
+                                    </svg>
+                                </button>
+                            </h3>
+                            <div class="filter-list__content filter-list__content--hidden" data-toggle-accordion-target="content">
+                                <br>
+                                <ul class="filter-list__items">
+                                    <li class="filter-list__item">
+                                        <label class="checkbox">
+                                            <input class="checkbox__input" name="CourseSearchForm[isMini]" id="11" value="0" type="checkbox">
+                                            <span class="checkbox__mark"></span>
+                                            <span class="checkbox__text">
+                                                    <label for="11">Все направления</label>
+                                                </span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-list__item">
+                                        <label class="checkbox">
+                                            <input class="checkbox__input" name="CourseSearchForm[isMini]" id="22" value="0" type="checkbox">
+                                            <span class="checkbox__mark"></span>
+                                            <span class="checkbox__text">
+                                                    <label for="22">Гибкие навыки</label>
+                                                </span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-list__item">
+                                        <label class="checkbox">
+                                            <input class="checkbox__input" name="CourseSearchForm[isMini]" id="33" value="0" type="checkbox">
+                                            <span class="checkbox__mark"></span>
+                                            <span class="checkbox__text">
+                                                    <label for="33">Непедагогические</label>
+                                                </span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <br>
+                            </div>
+                        </li>
+                    </ul>
+
+                </form>
+            </div>
+            <div class="catalog-course__cards">
+                <div class="course">
+                    <ul class="course__items">
+                        <li class="course__item">
+                            <div class="course__left">
+                                <div class="course__gallery gallery-course">
+                                    <a href="#" target="_blank" class="gallery-course__block">
+                                        <div class="gallery-course__item">
+                                            <img src="images/course/image2.png" class="gallery-course__img" width="205" height="205" loading="lazy" alt="Изображение 2">
+                                        </div>
+                                    </a>
+                                    <span class="gallery-course__status">
                                             Новинка
                                         </span>
-                                        <ul class="gallery-course__elements">
-                                            <li class="gallery-course__element">
-                                                <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.184 10.786V9.082c0-.565.443-1.073 1.073-1.073.566 0 1.073.444 1.073 1.073v1.64a2.099 2.099 0 0 1-2.082 2.082 2.103 2.103 0 0 1-2.083-2.082V7.128A5.782 5.782 0 0 1 6.97 1.196a5.857 5.857 0 0 1 5.863 5.868v3.594a2.099 2.099 0 0 1-2.083 2.082 2.099 2.099 0 0 1-2.082-2.082v-1.64c0-.566.443-1.073 1.073-1.073.566 0 1.074.443 1.074 1.073v1.768" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                                <p>
-                                                    Аудиоформат
-                                                </p>
-                                            </li>
-                                            <li class="gallery-course__element">
-                                                <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.835 7A5.835 5.835 0 0 1 7 12.833 5.835 5.835 0 0 1 1.168 7a5.835 5.835 0 0 1 5.833-5.833A5.835 5.835 0 0 1 12.835 7z" stroke-linecap="round" stroke-linejoin="round"/><path d="m9.165 8.855-1.808-1.08c-.315-.186-.572-.635-.572-1.003V4.381" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                               <p>
-                                                   36/72 ч
-                                               </p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="course__content">
-                                    <div class="course__body">
-                                        <ul class="course__types">
-                                            <li class="course__type">
-                                                Повышение квалификации
-                                            </li>
-                                            <li class="course__type">
-                                                Психология
-                                            </li>
-                                        </ul>
-                                        <h2 class="course__title">
-                                            Искусственный интеллект: тексты и креативы
-                                        </h2>
-                                        <div class="course__author">
-                                            <img src="images/course/logo.svg" class="course__author-logo" width="28" height="28" loading="lazy" alt="Логотип">
-                                            <p class="course__author-author">
-                                                Инфоурок
+                                    <ul class="gallery-course__elements">
+                                        <li class="gallery-course__element">
+                                            <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.184 10.786V9.082c0-.565.443-1.073 1.073-1.073.566 0 1.073.444 1.073 1.073v1.64a2.099 2.099 0 0 1-2.082 2.082 2.103 2.103 0 0 1-2.083-2.082V7.128A5.782 5.782 0 0 1 6.97 1.196a5.857 5.857 0 0 1 5.863 5.868v3.594a2.099 2.099 0 0 1-2.083 2.082 2.099 2.099 0 0 1-2.082-2.082v-1.64c0-.566.443-1.073 1.073-1.073.566 0 1.074.443 1.074 1.073v1.768" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <p>
+                                                Аудиоформат
                                             </p>
-                                        </div>
+                                        </li>
+                                        <li class="gallery-course__element">
+                                            <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.835 7A5.835 5.835 0 0 1 7 12.833 5.835 5.835 0 0 1 1.168 7a5.835 5.835 0 0 1 5.833-5.833A5.835 5.835 0 0 1 12.835 7z" stroke-linecap="round" stroke-linejoin="round"/><path d="m9.165 8.855-1.808-1.08c-.315-.186-.572-.635-.572-1.003V4.381" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <p>
+                                                36/72 ч
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="course__content">
+                                <div class="course__body">
+                                    <ul class="course__types">
+                                        <li class="course__type">
+                                            Повышение квалификации
+                                        </li>
+                                        <li class="course__type">
+                                            Психология
+                                        </li>
+                                    </ul>
+                                    <h2 class="course__title">
+                                        Искусственный интеллект: тексты и креативы
+                                    </h2>
+                                    <div class="course__author">
+                                        <img src="images/course/logo.svg" class="course__author-logo" width="28" height="28" loading="lazy" alt="Логотип">
+                                        <p class="course__author-author">
+                                            Инфоурок
+                                        </p>
+                                    </div>
 
-                                        <div class="course__rating rating">
+                                    <div class="course__rating rating">
                                             <span class="rating__count">
                                                 5,0
                                             </span>
 
-                                            <ul class="rating__items">
-                                                <li class="rating__item rating__item--positive"></li>
-                                                <li class="rating__item rating__item--negative"></li>
-                                                <li class="rating__item rating__item--negative"></li>
-                                                <li class="rating__item rating__item--negative"></li>
-                                                <li class="rating__item rating__item--negative"></li>
-                                            </ul>
-
-                                            <button class="rating__all">794 отзыва</button>
-                                        </div>
-
-                                        <ul class="course__statistics">
-                                            <li class="course__data">
-                                                <p class="course__data-description">
-                                                    На обучении:
-                                                </p>
-                                                <div class="course__data-block">
-                                                    <p class="course__data-info">4 748&nbsp;человек</p>
-                                                    <p class="course__data-info">85&nbsp;регионов</p>
-                                                </div>
-                                            </li>
-                                            <li class="course__data">
-                                                <p class="course__data-description">
-                                                    Прошли:
-                                                </p>
-                                                <p class="course__data-info">25 707&nbsp;человек</p>
-                                            </li>
+                                        <ul class="rating__items">
+                                            <li class="rating__item rating__item--positive"></li>
+                                            <li class="rating__item rating__item--negative"></li>
+                                            <li class="rating__item rating__item--negative"></li>
+                                            <li class="rating__item rating__item--negative"></li>
+                                            <li class="rating__item rating__item--negative"></li>
                                         </ul>
+
+                                        <button class="rating__all">794 отзыва</button>
                                     </div>
-                                    <div class="course__footer">
+
+                                    <ul class="course__statistics">
+                                        <li class="course__data">
+                                            <p class="course__data-description">
+                                                На обучении:
+                                            </p>
+                                            <div class="course__data-block">
+                                                <p class="course__data-info">4 748&nbsp;человек</p>
+                                                <p class="course__data-info">85&nbsp;регионов</p>
+                                            </div>
+                                        </li>
+                                        <li class="course__data">
+                                            <p class="course__data-description">
+                                                Прошли:
+                                            </p>
+                                            <p class="course__data-info">25 707&nbsp;человек</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="course__footer">
                                             <span class="course__price">
                                                 699 ₽
                                             </span>
-                                        <div class="course__buttons">
-                                            <a href="#" class="course__btn btn-aic btn-aic--primary btn-aic--md">Подать заявку</a>
-                                            <a href="#" class="course__btn btn-aic btn-aic--secondary btn-aic--md">Подробнее</a>
-                                        </div>
+                                    <div class="course__buttons">
+                                        <a href="#" class="course__btn btn-aic btn-aic--primary btn-aic--md">Подать заявку</a>
+                                        <a href="#" class="course__btn btn-aic btn-aic--secondary btn-aic--md">Подробнее</a>
                                     </div>
                                 </div>
+                            </div>
 
-                                <button type="button" class="course__favorite">
-                                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M4 5.313C4 3.104 5.035 2 6.908 2h10.175C18.779 2 20 3.104 20 5.313V18.52c0 .944-.328 1.78-1.028 2.209-.7.43-1.559.323-2.35-.136m0 0C15.392 19.88 12.132 17.5 12 17.5c-.131 0-3.389 2.379-4.622 3.093h-.002c-.792.455-1.65.558-2.348.13C4.329 20.292 4 19.461 4 18.52V5.313" stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                </button>
-                            </li>
-                            <li class="course__item">
-                                <div class="course__left">
-                                    <div class="course__gallery gallery-course">
-                                        <a href="#" target="_blank" class="gallery-course__block">
-                                            <div class="gallery-course__item">
-                                                <img src="images/course/image1.png" class="gallery-course__img" width="205" height="205" loading="lazy" alt="Изображение 2">
-                                            </div>
-                                        </a>
-                                        <span class="gallery-course__status">
+                            <button type="button" class="course__favorite">
+                                <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M4 5.313C4 3.104 5.035 2 6.908 2h10.175C18.779 2 20 3.104 20 5.313V18.52c0 .944-.328 1.78-1.028 2.209-.7.43-1.559.323-2.35-.136m0 0C15.392 19.88 12.132 17.5 12 17.5c-.131 0-3.389 2.379-4.622 3.093h-.002c-.792.455-1.65.558-2.348.13C4.329 20.292 4 19.461 4 18.52V5.313" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                        </li>
+                        <li class="course__item">
+                            <div class="course__left">
+                                <div class="course__gallery gallery-course">
+                                    <a href="#" target="_blank" class="gallery-course__block">
+                                        <div class="gallery-course__item">
+                                            <img src="images/course/image1.png" class="gallery-course__img" width="205" height="205" loading="lazy" alt="Изображение 2">
+                                        </div>
+                                    </a>
+                                    <span class="gallery-course__status">
                                             Новинка
                                         </span>
-                                        <ul class="gallery-course__elements">
-                                            <li class="gallery-course__element">
-                                                <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.184 10.786V9.082c0-.565.443-1.073 1.073-1.073.566 0 1.073.444 1.073 1.073v1.64a2.099 2.099 0 0 1-2.082 2.082 2.103 2.103 0 0 1-2.083-2.082V7.128A5.782 5.782 0 0 1 6.97 1.196a5.857 5.857 0 0 1 5.863 5.868v3.594a2.099 2.099 0 0 1-2.083 2.082 2.099 2.099 0 0 1-2.082-2.082v-1.64c0-.566.443-1.073 1.073-1.073.566 0 1.074.443 1.074 1.073v1.768" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                                <p>
-                                                    Аудиоформат
-                                                </p>
-                                            </li>
-                                            <li class="gallery-course__element">
-                                                <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.835 7A5.835 5.835 0 0 1 7 12.833 5.835 5.835 0 0 1 1.168 7a5.835 5.835 0 0 1 5.833-5.833A5.835 5.835 0 0 1 12.835 7z" stroke-linecap="round" stroke-linejoin="round"/><path d="m9.165 8.855-1.808-1.08c-.315-.186-.572-.635-.572-1.003V4.381" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                                <p>
-                                                    36/72 ч
-                                                </p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="course__content">
-                                    <div class="course__body">
-                                        <ul class="course__types">
-                                            <li class="course__type">
-                                                Повышение квалификации
-                                            </li>
-                                            <li class="course__type">
-                                                Психология
-                                            </li>
-                                        </ul>
-                                        <h2 class="course__title">
-                                            Искусственный интеллект: тексты и креативы
-                                        </h2>
-                                        <div class="course__author">
-                                            <img src="images/course/logo.svg" class="course__author-logo" width="28" height="28" loading="lazy" alt="Логотип">
-                                            <p class="course__author-author">
-                                                Инфоурок
+                                    <ul class="gallery-course__elements">
+                                        <li class="gallery-course__element">
+                                            <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.184 10.786V9.082c0-.565.443-1.073 1.073-1.073.566 0 1.073.444 1.073 1.073v1.64a2.099 2.099 0 0 1-2.082 2.082 2.103 2.103 0 0 1-2.083-2.082V7.128A5.782 5.782 0 0 1 6.97 1.196a5.857 5.857 0 0 1 5.863 5.868v3.594a2.099 2.099 0 0 1-2.083 2.082 2.099 2.099 0 0 1-2.082-2.082v-1.64c0-.566.443-1.073 1.073-1.073.566 0 1.074.443 1.074 1.073v1.768" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <p>
+                                                Аудиоформат
                                             </p>
-                                        </div>
+                                        </li>
+                                        <li class="gallery-course__element">
+                                            <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.835 7A5.835 5.835 0 0 1 7 12.833 5.835 5.835 0 0 1 1.168 7a5.835 5.835 0 0 1 5.833-5.833A5.835 5.835 0 0 1 12.835 7z" stroke-linecap="round" stroke-linejoin="round"/><path d="m9.165 8.855-1.808-1.08c-.315-.186-.572-.635-.572-1.003V4.381" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <p>
+                                                36/72 ч
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="course__content">
+                                <div class="course__body">
+                                    <ul class="course__types">
+                                        <li class="course__type">
+                                            Повышение квалификации
+                                        </li>
+                                        <li class="course__type">
+                                            Психология
+                                        </li>
+                                    </ul>
+                                    <h2 class="course__title">
+                                        Искусственный интеллект: тексты и креативы
+                                    </h2>
+                                    <div class="course__author">
+                                        <img src="images/course/logo.svg" class="course__author-logo" width="28" height="28" loading="lazy" alt="Логотип">
+                                        <p class="course__author-author">
+                                            Инфоурок
+                                        </p>
+                                    </div>
 
-                                        <div class="course__rating rating">
+                                    <div class="course__rating rating">
                                             <span class="rating__count">
                                                 3,5
                                             </span>
 
-                                            <ul class="rating__items">
-                                                <li class="rating__item rating__item--positive"></li>
-                                                <li class="rating__item rating__item--negative"></li>
-                                                <li class="rating__item rating__item--negative"></li>
-                                                <li class="rating__item rating__item--negative"></li>
-                                                <li class="rating__item rating__item--negative"></li>
-                                            </ul>
-
-                                            <button class="rating__all">794 отзыва</button>
-                                        </div>
-
-                                        <ul class="course__statistics">
-                                            <li class="course__data">
-                                                <p class="course__data-description">
-                                                    На обучении:
-                                                </p>
-                                                <div class="course__data-block">
-                                                    <p class="course__data-info">4 748&nbsp;человек</p>
-                                                    <p class="course__data-info">85&nbsp;регионов</p>
-                                                </div>
-                                            </li>
-                                            <li class="course__data">
-                                                <p class="course__data-description">
-                                                    Прошли:
-                                                </p>
-                                                <p class="course__data-info">25 707&nbsp;человек</p>
-                                            </li>
+                                        <ul class="rating__items">
+                                            <li class="rating__item rating__item--positive"></li>
+                                            <li class="rating__item rating__item--negative"></li>
+                                            <li class="rating__item rating__item--negative"></li>
+                                            <li class="rating__item rating__item--negative"></li>
+                                            <li class="rating__item rating__item--negative"></li>
                                         </ul>
+
+                                        <button class="rating__all">794 отзыва</button>
                                     </div>
-                                    <div class="course__footer">
+
+                                    <ul class="course__statistics">
+                                        <li class="course__data">
+                                            <p class="course__data-description">
+                                                На обучении:
+                                            </p>
+                                            <div class="course__data-block">
+                                                <p class="course__data-info">4 748&nbsp;человек</p>
+                                                <p class="course__data-info">85&nbsp;регионов</p>
+                                            </div>
+                                        </li>
+                                        <li class="course__data">
+                                            <p class="course__data-description">
+                                                Прошли:
+                                            </p>
+                                            <p class="course__data-info">25 707&nbsp;человек</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="course__footer">
                                             <span class="course__price">
                                                 699 ₽
                                             </span>
-                                        <div class="course__buttons">
-                                            <a href="#" class="course__btn btn-aic btn-aic--primary btn-aic--md">Подать заявку</a>
-                                            <a href="#" class="course__btn btn-aic btn-aic--secondary btn-aic--md">Подробнее</a>
-                                        </div>
+                                    <div class="course__buttons">
+                                        <a href="#" class="course__btn btn-aic btn-aic--primary btn-aic--md">Подать заявку</a>
+                                        <a href="#" class="course__btn btn-aic btn-aic--secondary btn-aic--md">Подробнее</a>
                                     </div>
                                 </div>
+                            </div>
 
-                                <button type="button" class="course__favorite">
-                                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M4 5.313C4 3.104 5.035 2 6.908 2h10.175C18.779 2 20 3.104 20 5.313V18.52c0 .944-.328 1.78-1.028 2.209-.7.43-1.559.323-2.35-.136m0 0C15.392 19.88 12.132 17.5 12 17.5c-.131 0-3.389 2.379-4.622 3.093h-.002c-.792.455-1.65.558-2.348.13C4.329 20.292 4 19.461 4 18.52V5.313" stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
+                            <button type="button" class="course__favorite">
+                                <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M4 5.313C4 3.104 5.035 2 6.908 2h10.175C18.779 2 20 3.104 20 5.313V18.52c0 .944-.328 1.78-1.028 2.209-.7.43-1.559.323-2.35-.136m0 0C15.392 19.88 12.132 17.5 12 17.5c-.131 0-3.389 2.379-4.622 3.093h-.002c-.792.455-1.65.558-2.348.13C4.329 20.292 4 19.461 4 18.52V5.313" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 <script src="js/index.ts" type="module"></script>
 </body>
@@ -239,9 +410,109 @@
             });
         }
     }
+    class ToggleController {
+        static targets = ['toggleButton', 'content', 'targetButton'];
+
+        static values = {
+            initiallyHidden: Boolean,
+        };
+
+        constructor(element) {
+            this.element = element;
+            this.toggleButtonTarget = this.element.querySelector('[data-toggle-accordion-target="toggleButton"]');
+            this.contentTarget = this.element.querySelector('[data-toggle-accordion-target="content"]');
+            this.targetButtonTargets = Array.from(this.element.querySelectorAll('[data-toggle-accordion-target="targetButton"]'));
+
+            if (!this.toggleButtonTarget || !this.contentTarget) {
+                console.error('Toggle button or content target not found.');
+                return;
+            }
+
+            this.initiallyHiddenValue = this.element.dataset.toggleAccordionInitiallyHiddenValue === 'true';
+            this.isOpen = false;
+            this.transitionDuration = 300;
+
+            this.connect();
+        }
+
+        connect() {
+            this.isOpen = !this.initiallyHiddenValue;
+            this.toggleButtonTarget.style.transition = `transform ${this.transitionDuration}ms ease-out`;
+            this.contentTarget.style.transition = `height ${this.transitionDuration}ms ease-out`;
+
+            this.contentTarget.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+
+            this.element.addEventListener('click', this.toggle.bind(this));
+
+            if (this.targetButtonTargets && this.targetButtonTargets.length > 0) {
+                this.targetButtonTargets.forEach((button) => {
+                    button.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                    });
+                });
+            }
+        }
+
+        toggle() {
+            if (this.isOpen) {
+                this.close();
+            } else {
+                this.open();
+            }
+        }
+
+        open() {
+            this.isOpen = true;
+            this.contentTarget.style.height = 'auto';
+            const computedHeight = this.contentTarget.scrollHeight;
+            this.contentTarget.style.height = '0px';
+            requestAnimationFrame(() => {
+                this.contentTarget.style.height = `${computedHeight}px`;
+            });
+
+            this.toggleButtonTarget.style.transform = 'rotate(180deg)';
+            this.contentTarget.classList.add('open');
+        }
+
+        close() {
+            this.isOpen = false;
+            const computedHeight = this.contentTarget.scrollHeight;
+            this.contentTarget.style.height = `${computedHeight}px`;
+            requestAnimationFrame(() => {
+                this.contentTarget.style.height = '0px';
+            });
+
+            this.toggleButtonTarget.style.transform = 'rotate(0deg)';
+            this.contentTarget.classList.remove('open');
+        }
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.course__rating').forEach(container => new Rating(container));
+        const elements = document.querySelectorAll('[data-controller="toggle-accordion"]');
+        elements.forEach(element => new ToggleController(element));
+
+
+
+        const filterBlock = document.querySelector(".js-filter-block");
+        const filterCount = document.querySelector(".js-filter-count");
+        const filterNames = document.querySelectorAll(".js-filter-name");
+
+        if (filterBlock && filterCount) {
+            const itemCount = filterBlock.children.length;
+            filterCount.textContent = itemCount;
+        }
+
+        if (filterNames.length > 0) {
+            filterNames.forEach((filter) => {
+                filter.addEventListener("click", () => {
+                    filter.classList.toggle("active");
+                });
+            });
+        }
     });
+
 </script>
 

@@ -1,0 +1,120 @@
+.filter-list {
+  padding: 24px 16px 32px 24px;
+  border-radius: 16px;
+  background-color: #fbfcfa;
+
+  &__title {
+    display: none;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #8a8f88;
+    cursor: pointer;
+
+    &--inside {
+      position: relative;
+      justify-content: flex-start;
+      font-weight: 600;
+      line-height: 125%;
+      text-transform: inherit;
+      color: #1b6100;
+      gap: 4px;
+
+      &.active {
+        &::before {
+          content: attr(data-text);
+        }
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__element {
+    padding: 13px 0;
+    border-bottom: 1px solid #ebebeb;
+
+    &--inside {
+      padding: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__toggle {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__content {
+    box-sizing: content-box;
+    overflow: hidden;
+
+    [data-toggle-accordion-initially-hidden-value="true"] & {
+      height: 0;
+    }
+  }
+
+  &__search {
+    margin: 0 1px;
+    padding: 0 1px;
+  }
+
+  &__search-input {
+    box-sizing: border-box;
+    padding: 8px 8px 8px 40px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: -0.01em;
+    color: #1f1f1f;
+    background-image: url("data:image/svg+xml,%3Csvg%20class%3D%22filter-list__search-icon%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22m16.5%2016%205.03%204.47M11%202c-4.416%200-8%203.593-8%208s3.584%208%208%208%208-3.593%208-8-3.584-8-8-8z%22%20stroke%3D%22%231F1F1F%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E");
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #ebebeb;
+    }
+
+    &:active,
+    &:focus {
+      outline: 1px solid #24a600;
+    }
+
+    &::placeholder {
+      color: #8a8f88;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    transform: translateY(-50%);
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+}

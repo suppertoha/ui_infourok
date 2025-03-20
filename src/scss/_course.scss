@@ -288,6 +288,7 @@
     border: none;
     border-radius: 4px;
     background-color: #ebebeb;
+    transition: 0.3s;
     backdrop-filter: blur(32px);
 
     @include media($xl) {
@@ -300,6 +301,23 @@
       top: 14px;
       width: 32px;
       height: 32px;
+    }
+
+    &:hover {
+      svg {
+        stroke: #24a600;
+      }
+    }
+
+    &:active {
+      svg {
+        fill: #24a600;
+        stroke: #24a600;
+      }
+    }
+
+    svg {
+      stroke: #1f1f1f;
     }
   }
 }
